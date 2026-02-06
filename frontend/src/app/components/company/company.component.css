@@ -93,6 +93,25 @@
 
 .company-member-cell_email {
     max-width: 216px;
+    position: relative;
+    overflow: hidden;
+}
+
+.company-member-cell_email::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    background: linear-gradient(to right, transparent, white);
+    pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .company-member-cell_email::after {
+        background: linear-gradient(to right, transparent, #424242);
+    }
 }
 
 @media (width <= 600px) {
@@ -113,6 +132,10 @@
     font-size: 16px;
     width: 16px;
     height: 16px;
+}
+
+.company-member-cell_email-icon_pending {
+    color: #F9A825;
 }
 
 .company-member-cell_name {
